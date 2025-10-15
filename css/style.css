@@ -152,6 +152,7 @@ body {
 .logo {
   text-align: center;
   max-width: 79px;
+  cursor: pointer;
 }
 
 .banner {
@@ -544,6 +545,14 @@ body {
 .row-award {
   background: #fff;
   padding: 50px 50px;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+}
+.image-award img {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content-testimonial p {
@@ -811,6 +820,12 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.phone a {
+  text-decoration: none;
+  color: #0e1412;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 1399.98px) {
@@ -1748,4 +1763,5 @@ body {
     left: -24%;
     top: -136%;
   }
+ 
 }

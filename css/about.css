@@ -425,6 +425,13 @@ body {
   align-items: center;
   gap: 5px;
 }
+
+.phone a {
+  text-decoration: none;
+  color: #0e1412;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1399.98px ) {
   .container {
     width: 100%;
