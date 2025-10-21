@@ -312,11 +312,18 @@ body {
     font-size: 15px;
     margin-bottom: 10px;
 }
-.row span {
+.row a {
     font-size: 16px;
     color: red;
+    text-decoration: none;
+    cursor: pointer;
 }
-
+.row a:hover {
+  color: brown;
+}
+.row h3, p {
+  cursor: pointer;
+}
 .btn-blog {
   display: flex;
   justify-content: center; 

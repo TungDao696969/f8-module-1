@@ -366,6 +366,22 @@ body {
   color: #586863;
 }
 
+.contact-phone a {
+  text-decoration: none;
+  color: #586863;
+}
+.contact-email a {
+  text-decoration: none;
+  color: #586863;
+}
+.contact-address a {
+  text-decoration: none;
+  color: #586863;
+}
+.contact-right textarea {
+  padding: 5px;
+}
+
 @media screen and (max-width: 1399.98px) {
   .container {
     width: 100%;
