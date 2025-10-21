@@ -5,7 +5,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 html {
   scrollbar-gutter: stable;
 }
@@ -24,15 +23,30 @@ body {
 }
 .header {
   background: var(--Yellow-Light, #f8ebc9);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.content-banner {
+  background: #f8ebc9;
+}
+.content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 0;
 }
 
-.content {
-  padding: 10px 150px;
-}
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.menu-toggle {
+  display: none;
+}
+.menu-overlay {
+  display: none;
 }
 .menu-box ul {
   list-style: none;
@@ -94,6 +108,9 @@ body {
   display: none;
 }
 
+.dropdown {
+  padding: 0 15px;
+}
 .dropdown i {
   font-size: 10px;
   /* margin-left: 10px; */
@@ -103,13 +120,15 @@ body {
 .dropdown-menu {
   position: absolute;
   top: 30px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 10px 0;
   display: none;
-  min-width: 230px;
+  width: 100%;
+  min-width: 180px;
   border-radius: 4px;
   z-index: 10;
 }
@@ -118,13 +137,10 @@ body {
   display: block;
   padding: 10px 0;
   color: #0e1412;
-  font-size: 15px;
+  font-size: 13px !important;
   text-decoration: none;
-  margin: 20px 0;
-}
-
-.dropdown {
-  padding: 0 15px;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .dropdown-menu li a:hover {
@@ -139,7 +155,56 @@ body {
 .dropdown input[type="checkbox"]:checked ~ i {
   transform: rotate(180deg);
 }
+.justice {
+  font-size: 22px;
+  font-weight: 900;
+}
 
+.Justice a {
+  text-decoration: none;
+  color: #586863;
+}
+
+.logo {
+  text-align: center;
+  max-width: 79px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.law {
+   background: var(--Yellow-Light, #f8ebc9);
+}
+
+.header-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 80px;
+}
+
+.header-bottom h1 {
+    color: #0E1412;
+    font-size: 60px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.justice {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.Justice a {
+  text-decoration: none;
+  color: #586863;
+}
+.logo {
+  text-align: center;
+  max-width: 79px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
 .box-contact {
   display: flex;
   justify-content: space-between;
@@ -206,6 +271,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
   cursor: pointer;
+  user-select: none;
 }
 
 .btn-contact:hover {
@@ -247,6 +313,7 @@ body {
 
 .logo-bottom {
   fill: var(--White, #fff);
+  text-align: center;
 }
 
 .span-bottom span {
@@ -279,6 +346,24 @@ body {
   text-decoration: none;
   color: #0e1412;
   font-weight: 700;
+}
+
+.icon-bottom rect  {
+  cursor: pointer;
+}
+.icon-bottom rect:hover {
+  fill: #e85600;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pages a {
+  text-decoration: none;
+  color: #586863;
 }
 
 @media screen and (max-width: 1399.98px) {
@@ -341,16 +426,18 @@ body {
   .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: -50px;
-    width: 100%;
-    min-width: 180px;
-    margin-top: 10px;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 300px;
+    margin: 0 auto;
     padding: 10px 0;
-    background: #fff;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 10000;
+    text-align: center;
   }
 
   .dropdown input[type="checkbox"]:checked ~ .dropdown-menu {
@@ -361,6 +448,11 @@ body {
     display: block;
     padding: 8px 0;
     text-align: left;
+  }
+
+  .image-map iframe {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -434,10 +526,13 @@ body {
     font-size: 12px;
   }
   .dropdown {
-    margin: 15px 0;
     display: flex;
     flex-direction: column;
     position: relative;
+  }
+
+   .menu-box .nav li {
+    padding: 8px 0;
   }
 
   .menu-overlay {
@@ -475,16 +570,18 @@ body {
   .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: -50px;
-    width: 100%;
-    min-width: 180px;
-    margin-top: 10px;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); 
+    max-width: 300px;
+    margin: 0 auto;
     padding: 10px 0;
-    background: gray;
+    background: gray; 
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 10000;
+    text-align: center;
   }
 
   .dropdown input[type="checkbox"]:checked ~ .dropdown-menu {
@@ -571,7 +668,6 @@ body {
     font-size: 12px;
   }
   .dropdown {
-    margin: 15px 0;
     display: flex;
     flex-direction: column;
   }
@@ -610,10 +706,26 @@ body {
     justify-content: space-between;
   }
 
-  .logo {
-    display: none;
-  }
   .call-menu span {
     font-size: 18px;
+  }
+
+  .phone p {
+    font-size: 13px;
+  }
+  .phone a {
+    font-size: 10px;
+  }
+  .call-menu i {
+    font-size: 15px;
+  }
+  .contact p {
+    font-size: 11px;
+  }
+  .contact {
+    text-align: center;
+  }
+  .logo {
+    display: none;
   }
 }
