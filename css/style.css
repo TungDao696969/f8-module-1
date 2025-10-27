@@ -264,6 +264,7 @@ body {
 
 .box-main {
   background: #0e1412;
+  padding: 20px 0;
 }
 
 .box-about {
@@ -469,10 +470,14 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.box-right .title{
+  color: #FD6038;
+}
 
 .image-team {
   position: relative;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .image-team img {
@@ -532,7 +537,7 @@ body {
 }
 
 .title-team p {
-  color: #586863;
+  color: #BECCC7;
 }
 .name {
   font-size: 20px;
@@ -657,6 +662,7 @@ body {
 .row-testimonial {
   background: #e6efec;
   width: 370px;
+  padding: 0 10px;
 }
 
 .row-testimonial img {
@@ -768,6 +774,12 @@ body {
   transition: max-height 0.4s ease, opacity 0.3s ease;
   opacity: 0;
   margin: 8px 0;
+}
+.p-faq p {
+  text-align: justify;
+  line-height: 1.6; /* Tăng khoảng cách giữa các dòng cho dễ đọc */
+  color: #333; /* Màu chữ trung tính */
+  font-size: 16px;
 }
 
 .collum-faq input:checked ~ .p-faq {
@@ -915,13 +927,18 @@ body {
 
 .Justice p {
   margin: 10px 0;
-  color: #586863;
+  color: #BECCC7;
   cursor: pointer;
 }
 .pages p {
   margin: 10px 0;
   color: #586863;
 }
+
+.Justice a {
+  color: #BECCC7;
+}
+
 
 .box-bottom h3 {
   font-size: 20px;
@@ -984,7 +1001,7 @@ body {
 
 .pages a {
   text-decoration: none;
-  color: #586863;
+  color: #BECCC7;
 }
 
 @media screen and (max-width: 1399.98px) {
